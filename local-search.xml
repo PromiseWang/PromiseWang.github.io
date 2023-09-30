@@ -4,7 +4,36 @@
   
   
   <entry>
-    <title>代码随想录算法训练营第八天| 344. 反转字符串、541. 反转字符串II、剑指Offer 05.替换空格、151.翻转字符串里的单词、剑指Offer58-II.左旋转字符串。</title>
+    <title>代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串</title>
+    <link href="/post/369230e4.html"/>
+    <url>/post/369230e4.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="代码随想录算法训练营第九天-28-实现-strStr-。459-重复的子字符串"><a href="#代码随想录算法训练营第九天-28-实现-strStr-。459-重复的子字符串" class="headerlink" title="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串"></a>代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串</h1><h2 id="28-实现strStr"><a href="#28-实现strStr" class="headerlink" title="28.实现strStr()"></a>28.实现strStr()</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0028.%E5%AE%9E%E7%8E%B0strStr.html">代码随想录(programmercarl.com)</a></p><p>  视频讲解：</p><ul><li><a href="https://www.bilibili.com/video/BV1PD4y1o7nd/">帮你把KMP算法学个通透！B站（理论篇）</a></li><li><a href="https://www.bilibili.com/video/BV1M5411j7Xx">帮你把KMP算法学个通透！（求next数组代码篇）</a></li></ul><p>  状态：看过视频之后AC</p></blockquote><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>具体KMP算法原理看卡哥的视频，讲的很好。</p><h4 id="KMP中匹配的过程"><a href="#KMP中匹配的过程" class="headerlink" title="KMP中匹配的过程"></a>KMP中匹配的过程</h4><p>KMP算法，匹配过程放入到一个小视频当中，每个画面持续3秒。好多视频讲解都是“移动模式串”来讲，自己写代码时候有点蒙，所以自己做了个小动图，不使用“移动”来呈现。</p><div style="position: relative; width: 100%; height: 100%;padding-bottom: 100%;"><iframe src="../images/KMP/匹配.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div><h4 id="Next数组构建过程"><a href="#Next数组构建过程" class="headerlink" title="Next数组构建过程"></a>Next数组构建过程</h4><div style="position: relative; width: 100%; height: 0;padding-bottom: 100%;"><iframe src="../images/KMP/next数组构建.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div><h4 id="Next数组说明"><a href="#Next数组说明" class="headerlink" title="Next数组说明"></a>Next数组说明</h4><p>Next数组中，每个元素表示：</p><ul><li>截止到目前为止，最长相等前后缀的长度；</li><li>截止到目前为止，最长前缀的后一位。</li></ul><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getNext</span><span class="hljs-params">(next []<span class="hljs-type">int</span>, s <span class="hljs-type">string</span>)</span></span> &#123;<br>j := <span class="hljs-number">0</span><br>next[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt; <span class="hljs-built_in">len</span>(s); i++ &#123;<br><span class="hljs-keyword">for</span> s[i] != s[j] &amp;&amp; j &gt; <span class="hljs-number">0</span> &#123;<br>j = next[j<span class="hljs-number">-1</span>]<br>&#125;<br><span class="hljs-keyword">if</span> s[i] == s[j] &#123;<br>j++<br>&#125;<br>next[i] = j<br><span class="hljs-comment">//fmt.Printf(&quot;第%v次循环后的next数组结果为:%v\n&quot;, i, next)</span><br>&#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">strStr</span><span class="hljs-params">(haystack <span class="hljs-type">string</span>, needle <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">int</span> &#123;<br><span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(needle) == <span class="hljs-number">0</span> &#123;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>&#125;<br>next := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-built_in">len</span>(needle))<br>getNext(next, needle)<br>j := <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i := <span class="hljs-keyword">range</span> haystack &#123;<br><span class="hljs-keyword">for</span> j &gt; <span class="hljs-number">0</span> &amp;&amp; haystack[i] != needle[j] &#123;<br>j = next[j<span class="hljs-number">-1</span>]<br>&#125;<br><span class="hljs-keyword">if</span> haystack[i] == needle[j] &#123;<br>j++<br>&#125;<br><span class="hljs-keyword">if</span> j == <span class="hljs-built_in">len</span>(needle) &#123;<br><span class="hljs-keyword">return</span> i - <span class="hljs-built_in">len</span>(needle) + <span class="hljs-number">1</span><br>&#125;<br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-number">-1</span><br>&#125;<br></code></pre></td></tr></table></figure><h2 id="459-重复的字符串"><a href="#459-重复的字符串" class="headerlink" title="459. 重复的字符串"></a>459. 重复的字符串</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/repeated-substring-pattern/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0459.%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2.html">代码随想录(programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV1cg41127fw">字符串这么玩，可有点难度！ | LeetCode：459.重复的子字符串</a></p><p>  状态：AC</p></blockquote><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>如果不使用KMP算法还是比较简单的，有很多东西语言已经帮我们实现好了。看了卡哥的讲解感叹这个思路。</p><p>构建一个新字符串<code>newString</code>为两个旧串<code>s</code>的拼接，但是要掐头去尾一个元素。如果<code>newString</code>仍然包含<code>s</code>，说明存在子串构成原字符串。</p><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">repeatedSubstringPattern</span><span class="hljs-params">(s <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">bool</span> &#123;<br>newString := s + s<br>newString = newString[<span class="hljs-number">1</span> : <span class="hljs-built_in">len</span>(newString)<span class="hljs-number">-2</span>]<br><span class="hljs-keyword">return</span> strings.Contains(newString, s)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>刷题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>代码随想录</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>代码随想录算法训练营第八天 344. 反转字符串、541. 反转字符串II、剑指Offer 05.替换空格、151.翻转字符串里的单词、剑指Offer58-II.左旋转字符串。</title>
     <link href="/post/6416b651.html"/>
     <url>/post/6416b651.html</url>
     
@@ -20,11 +49,11 @@
     
     <tags>
       
+      <tag>LeetCode</tag>
+      
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
-      
-      <tag>LeetCode</tag>
       
     </tags>
     
@@ -49,11 +78,11 @@
     
     <tags>
       
+      <tag>LeetCode</tag>
+      
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
-      
-      <tag>LeetCode</tag>
       
     </tags>
     
@@ -78,9 +107,9 @@
     
     <tags>
       
-      <tag>LeetCode</tag>
-      
       <tag>Debug</tag>
+      
+      <tag>LeetCode</tag>
       
       <tag>Java</tag>
       
@@ -107,11 +136,11 @@
     
     <tags>
       
+      <tag>LeetCode</tag>
+      
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
-      
-      <tag>LeetCode</tag>
       
     </tags>
     
@@ -136,11 +165,11 @@
     
     <tags>
       
+      <tag>LeetCode</tag>
+      
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
-      
-      <tag>LeetCode</tag>
       
     </tags>
     
@@ -165,11 +194,11 @@
     
     <tags>
       
+      <tag>LeetCode</tag>
+      
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
-      
-      <tag>LeetCode</tag>
       
     </tags>
     
@@ -194,11 +223,11 @@
     
     <tags>
       
+      <tag>LeetCode</tag>
+      
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
-      
-      <tag>LeetCode</tag>
       
     </tags>
     
@@ -223,11 +252,11 @@
     
     <tags>
       
+      <tag>LeetCode</tag>
+      
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
-      
-      <tag>LeetCode</tag>
       
     </tags>
     

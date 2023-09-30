@@ -16,39 +16,24 @@
   <meta name="author" content="Promise">
   <meta name="keywords" content="">
   
-    <meta name="description" content="【debug】Java中的map比较题目链接：242. 有效的字母异位词 事情起因：（由于自己对Java了解不深、有表达错误的请指出，感谢！）     群友发了一张代码截图，觉得自己写的代码并没有错，但是不能通过测试用例。 他的算法我简单说一下，有点麻烦，但算法不是这篇博客的重点。  两个Map：hashS、hashT分别用于存放字符串s和t中字母出现的频率(19行之前)； 遍历长的字符串对应的M">
+    <meta name="description" content="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串28.实现strStr()   题目链接：力扣题目链接   文章讲解：代码随想录(programmercarl.com)   视频讲解：  帮你把KMP算法学个通透！B站（理论篇） 帮你把KMP算法学个通透！（求next数组代码篇）    状态：看过视频之后AC  思路具体KMP算法原理看卡哥的视频，讲的很好。 KM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【debug】Java中的map比较">
-<meta property="og:url" content="https://promisewang.github.io/post/ad5be9d7.html">
+<meta property="og:title" content="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串">
+<meta property="og:url" content="https://promisewang.github.io/post/369230e4.html">
 <meta property="og:site_name" content="Study Or Debug">
-<meta property="og:description" content="【debug】Java中的map比较题目链接：242. 有效的字母异位词 事情起因：（由于自己对Java了解不深、有表达错误的请指出，感谢！）     群友发了一张代码截图，觉得自己写的代码并没有错，但是不能通过测试用例。 他的算法我简单说一下，有点麻烦，但算法不是这篇博客的重点。  两个Map：hashS、hashT分别用于存放字符串s和t中字母出现的频率(19行之前)； 遍历长的字符串对应的M">
+<meta property="og:description" content="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串28.实现strStr()   题目链接：力扣题目链接   文章讲解：代码随想录(programmercarl.com)   视频讲解：  帮你把KMP算法学个通透！B站（理论篇） 帮你把KMP算法学个通透！（求next数组代码篇）    状态：看过视频之后AC  思路具体KMP算法原理看卡哥的视频，讲的很好。 KM">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://promisewang.github.io/images/java_map_debug.jpg">
-<meta property="og:image" content="https://promisewang.github.io/images/hashST.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E5%88%9D%E6%AD%A5%E8%A7%A3%E5%86%B3.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E7%9F%AD%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.png">
-<meta property="og:image" content="https://promisewang.github.io/images/26%E5%AD%97%E6%AF%8D.png">
-<meta property="og:image" content="https://promisewang.github.io/images/3000%E5%A4%9A%E9%95%BF%E5%BA%A6.png">
-<meta property="og:image" content="https://promisewang.github.io/images/6%E6%AC%A1%E6%89%A9%E5%A2%9E.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E5%B1%95%E7%A4%BA%E4%BB%A3%E7%A0%81.png">
-<meta property="og:image" content="https://promisewang.github.io/images/128%E5%8D%A1%E4%BD%8F.png">
-<meta property="og:image" content="https://promisewang.github.io/images/26%E9%9A%8F%E6%9C%BA%E5%AD%97%E6%AF%8D%E6%8A%A5%E9%94%99.png">
-<meta property="og:image" content="https://promisewang.github.io/images/map%E6%BA%90%E7%A0%81.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E7%AC%AC%E4%B8%80%E4%B8%AA127.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA127.png">
-<meta property="article:published_time" content="2023-09-25T14:10:40.000Z">
-<meta property="article:modified_time" content="2023-09-25T15:26:43.456Z">
+<meta property="article:published_time" content="2023-09-28T07:08:08.000Z">
+<meta property="article:modified_time" content="2023-09-30T13:02:21.380Z">
 <meta property="article:author" content="Promise">
-<meta property="article:tag" content="Debug">
 <meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="代码随想录">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://promisewang.github.io/images/java_map_debug.jpg">
   
   
   
-  <title>【debug】Java中的map比较 - Study Or Debug</title>
+  <title>代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串 - Study Or Debug</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +187,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【debug】Java中的map比较"></span>
+            <span id="subtitle" data-typed-text="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串"></span>
           
         </div>
 
@@ -213,8 +198,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-25 22:10" pubdate>
-          2023年9月25日 晚上
+        <time datetime="2023-09-28 15:08" pubdate>
+          2023年9月28日 下午
         </time>
       </span>
     
@@ -225,7 +210,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          1.3k 字
         
       </span>
     
@@ -236,7 +221,7 @@
         
         
         
-          16 分钟
+          12 分钟
         
       </span>
     
@@ -273,99 +258,55 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">【debug】Java中的map比较</h1>
+            <h1 id="seo-header">代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="【debug】Java中的map比较"><a href="#【debug】Java中的map比较" class="headerlink" title="【debug】Java中的map比较"></a>【debug】Java中的map比较</h1><p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-anagram/">242. 有效的字母异位词</a></p>
-<p>事情起因：（由于自己对Java了解不深、有表达错误的请指出，感谢！）</p>
-<img src="../images/java_map_debug.jpg" srcset="/img/loading.gif" lazyload alt="报错截图" style="zoom:100%;" />
+                <h1 id="代码随想录算法训练营第九天-28-实现-strStr-。459-重复的子字符串"><a href="#代码随想录算法训练营第九天-28-实现-strStr-。459-重复的子字符串" class="headerlink" title="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串"></a>代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串</h1><h2 id="28-实现strStr"><a href="#28-实现strStr" class="headerlink" title="28.实现strStr()"></a>28.实现strStr()</h2><blockquote>
+<p>  题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/">力扣题目链接</a></p>
+<p>  文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0028.%E5%AE%9E%E7%8E%B0strStr.html">代码随想录(programmercarl.com)</a></p>
+<p>  视频讲解：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1PD4y1o7nd/">帮你把KMP算法学个通透！B站（理论篇）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1M5411j7Xx">帮你把KMP算法学个通透！（求next数组代码篇）</a></li>
+</ul>
+<p>  状态：看过视频之后AC</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>具体KMP算法原理看卡哥的视频，讲的很好。</p>
+<h4 id="KMP中匹配的过程"><a href="#KMP中匹配的过程" class="headerlink" title="KMP中匹配的过程"></a>KMP中匹配的过程</h4><p>KMP算法，匹配过程放入到一个小视频当中，每个画面持续3秒。好多视频讲解都是“移动模式串”来讲，自己写代码时候有点蒙，所以自己做了个小动图，不使用“移动”来呈现。</p>
+<div style="position: relative; width: 100%; height: 100%;padding-bottom: 100%;"><iframe 
+src="../images/KMP/匹配.mp4" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+
+<h4 id="Next数组构建过程"><a href="#Next数组构建过程" class="headerlink" title="Next数组构建过程"></a>Next数组构建过程</h4><div style="position: relative; width: 100%; height: 0;padding-bottom: 100%;"><iframe 
+src="../images/KMP/next数组构建.mp4" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
 
 
 
-<p>群友发了一张代码截图，觉得自己写的代码并没有错，但是不能通过测试用例。</p>
-<p>他的算法我简单说一下，有点麻烦，但算法不是这篇博客的重点。</p>
-<ol>
-<li>两个Map：<code>hashS</code>、<code>hashT</code>分别用于存放字符串<code>s</code>和<code>t</code>中字母出现的频率(19行之前)；</li>
-<li>遍历长的字符串对应的Map，假设是<code>hashS</code>，判断<code>hashS</code>与<code>hashT</code>相同的字母频率是否一样，如果不一样则<code>return false</code></li>
-</ol>
-<p>当时我是在外面，看到了这段代码，理解了他的想法之后好像真的没什么问题。</p>
-<h3 id="复现Bug与初步解决"><a href="#复现Bug与初步解决" class="headerlink" title="复现Bug与初步解决"></a>复现Bug与初步解决</h3><p>回来之后代码放到idea里面跑了一下，发现这个测试用例长度为50000位，而且每个字母出现的频率是一样的</p>
-<img src="../images/hashST.png" srcset="/img/loading.gif" lazyload alt="两个Map的内容" style="zoom:67%;" />
+<h4 id="Next数组说明"><a href="#Next数组说明" class="headerlink" title="Next数组说明"></a>Next数组说明</h4><p>Next数组中，每个元素表示：</p>
+<ul>
+<li>截止到目前为止，最长相等前后缀的长度；</li>
+<li>截止到目前为止，最长前缀的后一位。</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getNext</span><span class="hljs-params">(next []<span class="hljs-type">int</span>, s <span class="hljs-type">string</span>)</span></span> &#123;<br>	j := <span class="hljs-number">0</span><br>	next[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span><br>	<span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt; <span class="hljs-built_in">len</span>(s); i++ &#123;<br>		<span class="hljs-keyword">for</span> s[i] != s[j] &amp;&amp; j &gt; <span class="hljs-number">0</span> &#123;<br>			j = next[j<span class="hljs-number">-1</span>]<br>		&#125;<br>		<span class="hljs-keyword">if</span> s[i] == s[j] &#123;<br>			j++<br>		&#125;<br>		next[i] = j<br>		<span class="hljs-comment">//fmt.Printf(&quot;第%v次循环后的next数组结果为:%v\n&quot;, i, next)</span><br>	&#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">strStr</span><span class="hljs-params">(haystack <span class="hljs-type">string</span>, needle <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">int</span> &#123;<br>	<span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(needle) == <span class="hljs-number">0</span> &#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>	&#125;<br>	next := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-built_in">len</span>(needle))<br>	getNext(next, needle)<br>	j := <span class="hljs-number">0</span><br>	<span class="hljs-keyword">for</span> i := <span class="hljs-keyword">range</span> haystack &#123;<br>		<span class="hljs-keyword">for</span> j &gt; <span class="hljs-number">0</span> &amp;&amp; haystack[i] != needle[j] &#123;<br>			j = next[j<span class="hljs-number">-1</span>]<br>		&#125;<br>		<span class="hljs-keyword">if</span> haystack[i] == needle[j] &#123;<br>			j++<br>		&#125;<br>		<span class="hljs-keyword">if</span> j == <span class="hljs-built_in">len</span>(needle) &#123;<br>			<span class="hljs-keyword">return</span> i - <span class="hljs-built_in">len</span>(needle) + <span class="hljs-number">1</span><br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
-<p>打上断点继续向下走，看看是哪一步出现了问题。</p>
-<img src="../images/断点调试.png" srcset="/img/loading.gif" lazyload alt="断点调试" style="zoom:67%;" />
+<h2 id="459-重复的字符串"><a href="#459-重复的字符串" class="headerlink" title="459. 重复的字符串"></a>459. 重复的字符串</h2><blockquote>
+<p>  题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/repeated-substring-pattern/">力扣题目链接</a></p>
+<p>  文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0459.%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2.html">代码随想录(programmercarl.com)</a></p>
+<p>  视频讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cg41127fw">字符串这么玩，可有点难度！ | LeetCode：459.重复的子字符串</a></p>
+<p>  状态：AC</p>
+</blockquote>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>如果不使用KMP算法还是比较简单的，有很多东西语言已经帮我们实现好了。看了卡哥的讲解感叹这个思路。</p>
+<p>构建一个新字符串<code>newString</code>为两个旧串<code>s</code>的拼接，但是要掐头去尾一个元素。如果<code>newString</code>仍然包含<code>s</code>，说明存在子串构成原字符串。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">repeatedSubstringPattern</span><span class="hljs-params">(s <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">bool</span> &#123;<br>	newString := s + s<br>	newString = newString[<span class="hljs-number">1</span> : <span class="hljs-built_in">len</span>(newString)<span class="hljs-number">-2</span>]<br>	<span class="hljs-keyword">return</span> strings.Contains(newString, s)<br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-
-<p>没想到第一次循环就出错了，<code>hashT.get(c)</code>与<code>hashS.get(c)</code>的值都是1913，但是地址不一样，一个是<code>&#123;Integer@531&#125;</code>，一个是<code>&#123;Integer@587&#125;</code>。看来这里的<code>!=</code>判断的是地址而不是值，使用<code>equal()</code>方法即可，如下：</p>
-<img src="../images/初步解决.png" srcset="/img/loading.gif" lazyload alt="初步解决" style="zoom:67%;" />
-
-
-
-<h3 id="深层探索"><a href="#深层探索" class="headerlink" title="深层探索"></a>深层探索</h3><p>事情并没有真正的解决，既然群友能通过一些测试用例，说明了一些情况使用<code>!=</code>是可以用的，那几个测试用例都是用了很短的字符串，我也看下是什么情况，<code>s=&quot;anagram&quot;</code>，<code>t=&quot;nagaram&quot;</code>，这是个正确的用例，debug的结果是这样</p>
-<img src="../images/短测试用例.png" srcset="/img/loading.gif" lazyload alt="短测试用例" style="zoom:80%;" />
-
-
-
-<p>这可就是玄学了呀，短的数据不会出现问题，而长的会出现。</p>
-<h4 id="猜想一：与Map的大小有关"><a href="#猜想一：与Map的大小有关" class="headerlink" title="猜想一：与Map的大小有关"></a>猜想一：与Map的大小有关</h4><p>因为长的测试用例有26个键值对（每个字母均出现），而短的只出现了5个字母。我设置测试用例<code>s = t = &quot;abcdefghijklmnopqrstuvwxyz&quot;</code>（以下简称字母表），让每个字母都出现一次。</p>
-<img src="../images/26字母.png" srcset="/img/loading.gif" lazyload alt="26字母" style="zoom:80%;" />
-
-
-
-<p>还是正常的，<font color="#ff0000">猜想错误</font></p>
-<h4 id="猜想二：与测试用例的长度有关"><a href="#猜想二：与测试用例的长度有关" class="headerlink" title="猜想二：与测试用例的长度有关"></a>猜想二：与测试用例的长度有关</h4><p>接着我就多复制些字母表，出错误的是在50000的长度，我把字母表长度先放到3000多，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 扩增字符串代码代码</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">7</span>; i++) &#123;<br>    s += s;<br>    t += t;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-<img src="../images/3000多长度.png" srcset="/img/loading.gif" lazyload alt="长度为3328" style="zoom:80%;" />
-
-
-
-<p>还是有错误，继续缩短长度，将扩增代码循环6次，减少一次再看看</p>
-<img src="../images/6次扩增.png" srcset="/img/loading.gif" lazyload alt="6次扩增" style="zoom:80%;" />
-
-
-
-<p>这次竟然又不出错了，玄学！妥妥的玄学！</p>
-<p>我换了种思路，这次不用字母表了，只是用一个变量看看会不会触发这个BUG，如果依然触发，每次长度增加1，那么很快就会得到到底在多长的时候会出现。25行打上断点，被执行前一定会卡住。</p>
-<img src="../images/展示代码.png" srcset="/img/loading.gif" lazyload alt="展示代码" style="zoom:80%;" />
-
-
-
-<img src="../images/128卡住.png" srcset="/img/loading.gif" lazyload alt="字母a出现了128次时候开始报错" style="zoom:80%;" />
-
-
-
-<p>最后做一次验证，是不是Map中，只要有val超过128就会发生地址改变的情况。这次的测试用例使用随机字母</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-type">Random</span> <span class="hljs-variable">random</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> random.nextInt(<span class="hljs-number">26</span>) + <span class="hljs-number">97</span>;<br>    s += (<span class="hljs-type">char</span>)temp;<br>    t += (<span class="hljs-type">char</span>)temp;<br>    System.out.println(isAnagram(s, t));<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<img src="../images/26随机字母报错.png" srcset="/img/loading.gif" lazyload alt="字母a出现了128次的时候开始报错" style="zoom:80%"/>
-
-
-
-
-<p>很好！当字母w出现了超过128次时候地址发生了变化。128这个数字相信大家一定很敏感，那么这个范围很可能是[-128, 127]。那么则需要看看底层源码是怎么说的，去看看<code>Map.java</code>，搜索<code>127</code>，并没有发现相关说明。</p>
-<img src="../images/map源码.png" srcset="/img/loading.gif" lazyload alt="map源码" style="zoom:80%;" />
-
-
-
-<p><code>&#123;Integer@***&#125;</code>这里面经常变得数字就是星号部分，那么去<code>Ieteger.java</code>里面看看有什么发现。</p>
-<img src="../images/第一个127.png" srcset="/img/loading.gif" lazyload alt="搜索结果1" style="zoom:80%;" />
-
-
-
-<img src="../images/最后一个127.png" srcset="/img/loading.gif" lazyload alt="搜索结果2" style="zoom:80%;" />
-
-
-
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>结合这两段我悟了，果然有这么个范围，在初始化值的时候，[-128, 127]这个范围的数是在缓存里面，所以当<code>Map</code>中的<code>value</code>小于128时候读取的是缓存中的数，所以他们地址是一样的，也就是<code>hashS.get(c)==hashT.get(c)</code>的原因。当超过这个范围，则会在新的地方存放一个值，尽管<code>hashS.get(c)</code>和<code>hashT.get(c)</code>均为128，但是使用<code>==</code>或<code>!=</code>判断的时候，判断的是<strong>地址</strong>，得到<code>hashS.get(c)!=hashT.get(c)</code>。</p>
-<h4 id="所以一定要写equal-方法进行判断"><a href="#所以一定要写equal-方法进行判断" class="headerlink" title="所以一定要写equal()方法进行判断"></a>所以一定要写equal()方法进行判断</h4><h4 id="所以一定要写equal-方法进行判断-1"><a href="#所以一定要写equal-方法进行判断-1" class="headerlink" title="所以一定要写equal()方法进行判断"></a>所以一定要写equal()方法进行判断</h4><h4 id="所以一定要写equal-方法进行判断-2"><a href="#所以一定要写equal-方法进行判断-2" class="headerlink" title="所以一定要写equal()方法进行判断"></a>所以一定要写equal()方法进行判断</h4><p><code>hashS.get(c).equal(hashT.get(c))</code>，这样判断的才是值而不是地址</p>
 
                 
               </div>
@@ -384,7 +325,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Debug/" class="category-chain-item">Debug</a>
+  <a href="/categories/%E5%88%B7%E9%A2%98/" class="category-chain-item">刷题</a>
   
   
 
@@ -399,11 +340,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Debug/" class="print-no-link">#Debug</a>
-      
         <a href="/tags/LeetCode/" class="print-no-link">#LeetCode</a>
       
-        <a href="/tags/Java/" class="print-no-link">#Java</a>
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+      
+        <a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/" class="print-no-link">#代码随想录</a>
       
     </div>
   
@@ -415,8 +356,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【debug】Java中的map比较</div>
-      <div>https://promisewang.github.io/post/ad5be9d7.html</div>
+      <div>代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串</div>
+      <div>https://promisewang.github.io/post/369230e4.html</div>
     </div>
     <div class="license-meta">
       
@@ -428,7 +369,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月25日</div>
+          <div>2023年9月28日</div>
         </div>
       
       
@@ -460,18 +401,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/bc862a56.html" title="代码随想录算法训练营第七天| 454.四数相加II、383. 赎金信、15. 三数之和、18. 四数之和。">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">代码随想录算法训练营第七天| 454.四数相加II、383. 赎金信、15. 三数之和、18. 四数之和。</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/20198d61.html" title="代码随想录算法训练营第五天| 242.有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和 。">
-                        <span class="hidden-mobile">代码随想录算法训练营第五天| 242.有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和 。</span>
+                      <a href="/post/6416b651.html" title="代码随想录算法训练营第八天 344. 反转字符串、541. 反转字符串II、剑指Offer 05.替换空格、151.翻转字符串里的单词、剑指Offer58-II.左旋转字符串。">
+                        <span class="hidden-mobile">代码随想录算法训练营第八天 344. 反转字符串、541. 反转字符串II、剑指Offer 05.替换空格、151.翻转字符串里的单词、剑指Offer58-II.左旋转字符串。</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
