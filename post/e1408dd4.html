@@ -24,7 +24,7 @@
 <meta property="og:description" content="代码随想录算法训练营第十四天 102.二叉树的层序遍历、107.二叉树的层次遍历II、199.二叉树的右视图、637.二叉树的层平均值、429.N叉树的层序遍历、515.在每个树行中找最大值、116.填充每个节点的下一个右侧节点指、117.填充每个节点的下一个右侧节点指针II、104.二叉树的最大深度、111.二叉树的最小深度 文章讲解：代码随想录(programmercarl.com) 视频讲解">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-07T13:33:44.000Z">
-<meta property="article:modified_time" content="2023-10-07T14:17:21.491Z">
+<meta property="article:modified_time" content="2023-10-07T14:28:10.169Z">
 <meta property="article:author" content="Promise">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="算法">
@@ -299,7 +299,7 @@
 <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-ary-tree-level-order-traversal/">力扣题目链接</a></p>
 <p>状态：AC</p>
 </blockquote>
-<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>层序添加子节点改为循环遍历<code>Node</code>数组即可</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>层序添加子节点改为循环遍历<code>Children</code>数组即可</p>
 <h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Node <span class="hljs-keyword">struct</span> &#123;<br>	Val      <span class="hljs-type">int</span><br>	Children []*Node<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">levelOrder</span><span class="hljs-params">(root *Node)</span></span> [][]<span class="hljs-type">int</span> &#123;<br>	<span class="hljs-keyword">var</span> result [][]<span class="hljs-type">int</span><br>	<span class="hljs-keyword">if</span> root == <span class="hljs-literal">nil</span> &#123;<br>		<span class="hljs-keyword">return</span> result<br>	&#125;<br>	queue := arrayqueue.New()<br>	queue.Enqueue(root)<br>	<span class="hljs-keyword">for</span> !queue.Empty() &#123;<br>		size := queue.Size()<br>		temp := []<span class="hljs-type">int</span>&#123;&#125;<br>		<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; size; i++ &#123;<br>			node, _ := queue.Dequeue()<br>			temp = <span class="hljs-built_in">append</span>(temp, node.(*Node).Val)<br>			<span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt; <span class="hljs-built_in">len</span>(node.(*Node).Children); j++ &#123;<br>				<span class="hljs-keyword">if</span> node.(*Node).Children[j] != <span class="hljs-literal">nil</span> &#123;<br>					queue.Enqueue(node.(*Node).Children[j])<br>				&#125;<br>			&#125;<br>		&#125;<br>		result = <span class="hljs-built_in">append</span>(result, temp)<br>	&#125;<br>	<span class="hljs-keyword">return</span> result<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
 <h2 id="515-在每个树行中找最大值"><a href="#515-在每个树行中找最大值" class="headerlink" title="515.在每个树行中找最大值"></a>515.在每个树行中找最大值</h2><blockquote>
@@ -472,9 +472,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/e2c426b8.html" title="day15">
+                      <a href="/post/e2c426b8.html" title="代码随想录算法训练营第十五天 104.二叉树的最大深度、559.n叉树的最大深度">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">day15</span>
+                        <span class="hidden-mobile">代码随想录算法训练营第十五天 104.二叉树的最大深度、559.n叉树的最大深度</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
