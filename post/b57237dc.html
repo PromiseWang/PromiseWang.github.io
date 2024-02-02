@@ -16,22 +16,25 @@
   <meta name="author" content="Promise">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Spring学习day02控制反转  IoCSpring中通过IoC容器来管理所有Java对象的实例化和初始化，控制对象与对象之间的依赖关系。我们将由IoC容器管理的Java对象成为Spring Bean，与Java使用关键字new创建的Java对象没有任何区别。 IoC容器是Spring框架中最重要的核心组件之一，它贯穿了Spring从诞生到成长的整个过程。 ![IoC](&#x2F;Users">
+    <meta name="description" content="Spring学习day02控制反转  IoCSpring中通过IoC容器来管理所有Java对象的实例化和初始化，控制对象与对象之间的依赖关系。我们将由IoC容器管理的Java对象成为Spring Bean，与Java使用关键字new创建的Java对象没有任何区别。 IoC容器是Spring框架中最重要的核心组件之一，它贯穿了Spring从诞生到成长的整个过程。   控制反转是一种思想 控制反转是为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【study】Spring学习day02">
 <meta property="og:url" content="https://promisewang.github.io/post/b57237dc.html">
 <meta property="og:site_name" content="Study Or Debug">
-<meta property="og:description" content="Spring学习day02控制反转  IoCSpring中通过IoC容器来管理所有Java对象的实例化和初始化，控制对象与对象之间的依赖关系。我们将由IoC容器管理的Java对象成为Spring Bean，与Java使用关键字new创建的Java对象没有任何区别。 IoC容器是Spring框架中最重要的核心组件之一，它贯穿了Spring从诞生到成长的整个过程。 ![IoC](&#x2F;Users">
+<meta property="og:description" content="Spring学习day02控制反转  IoCSpring中通过IoC容器来管理所有Java对象的实例化和初始化，控制对象与对象之间的依赖关系。我们将由IoC容器管理的Java对象成为Spring Bean，与Java使用关键字new创建的Java对象没有任何区别。 IoC容器是Spring框架中最重要的核心组件之一，它贯穿了Spring从诞生到成长的整个过程。   控制反转是一种思想 控制反转是为">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://promisewang.github.io/images/springDay02/IoC.png">
 <meta property="og:image" content="https://promisewang.github.io/images/springDay02/set%E6%B3%A8%E5%85%A5%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="https://promisewang.github.io/images/springDay02/%E6%9C%89%E5%8F%82%E6%B3%A8%E5%85%A5%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="https://promisewang.github.io/images/springDay02/%E7%89%B9%E6%AE%8A%E7%B1%BB%E5%9E%8B%E6%B3%A8%E5%85%A5%E7%BB%93%E6%9E%9C.png">
 <meta property="article:published_time" content="2024-02-01T11:16:23.000Z">
-<meta property="article:modified_time" content="2024-02-02T14:23:54.192Z">
+<meta property="article:modified_time" content="2024-02-02T14:32:47.202Z">
 <meta property="article:author" content="Promise">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Study">
 <meta property="article:tag" content="Spring框架">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://promisewang.github.io/images/springDay02/set%E6%B3%A8%E5%85%A5%E7%BB%93%E6%9E%9C.png">
+<meta name="twitter:image" content="https://promisewang.github.io/images/springDay02/IoC.png">
   
   
   
@@ -212,7 +215,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.2k 字
+          8.9k 字
         
       </span>
     
@@ -223,7 +226,7 @@
         
         
         
-          77 分钟
+          75 分钟
         
       </span>
     
@@ -267,7 +270,7 @@
                 
                 <h1 id="Spring学习day02"><a href="#Spring学习day02" class="headerlink" title="Spring学习day02"></a>Spring学习day02</h1><h2 id="控制反转-IoC"><a href="#控制反转-IoC" class="headerlink" title="控制反转  IoC"></a>控制反转  IoC</h2><p>Spring中通过IoC容器来管理所有Java对象的实例化和初始化，控制对象与对象之间的依赖关系。我们将由IoC容器管理的Java对象成为Spring Bean，与Java使用关键字<code>new</code>创建的Java对象没有任何区别。</p>
 <p>IoC容器是Spring框架中最重要的核心组件之一，它贯穿了Spring从诞生到成长的整个过程。</p>
-<p>![IoC](&#x2F;Users&#x2F;promise&#x2F;Promise Code&#x2F;blog&#x2F;source&#x2F;images&#x2F;springDay02&#x2F;IoC.png)</p>
+<p><img src="/../images/springDay02/IoC.png" srcset="/img/loading.gif" lazyload alt="IoC"></p>
 <ul>
 <li>控制反转是一种思想</li>
 <li>控制反转是为了降低程序耦合度，提高程序扩展能力</li>
@@ -349,7 +352,7 @@
 
 
 <p>执行结果</p>
-<p>![](&#x2F;Users&#x2F;promise&#x2F;Promise Code&#x2F;blog&#x2F;source&#x2F;images&#x2F;springDay02&#x2F;有参注入结果.png)</p>
+<p><img src="/../images/springDay02/%E6%9C%89%E5%8F%82%E6%B3%A8%E5%85%A5%E7%BB%93%E6%9E%9C.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>  - 为什么有一句<font color="red">无参构造已经被执行</font>？</p>
 <p>  - 因为xml文件中“通过set方法注入”里面的内容也被执行，这里运行的是无参构造函数</p>
@@ -398,7 +401,7 @@
 
 
 <p>输出结果</p>
-<p>![](&#x2F;Users&#x2F;promise&#x2F;Promise Code&#x2F;blog&#x2F;source&#x2F;images&#x2F;springDay02&#x2F;特殊类型注入结果.png)</p>
+<p><img src="/../images/springDay02/%E7%89%B9%E6%AE%8A%E7%B1%BB%E5%9E%8B%E6%B3%A8%E5%85%A5%E7%BB%93%E6%9E%9C.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="内部引入bean"><a href="#内部引入bean" class="headerlink" title="内部引入bean"></a>内部引入bean</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.example.spring6.iocxml.ditest.Employee&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;employee2&quot;</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--内部bean注入--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;eName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mary&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;30&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;department&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.example.spring6.iocxml.ditest.Department&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;财务部&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
