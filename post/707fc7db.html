@@ -24,7 +24,7 @@
 <meta property="og:description" content="【LeetCode】09动态规划Part01  509.斐波那契数、70. 爬楼梯、746. 使用最小花费爬楼梯动态规划解题步骤 确定dp数组  递推公式  dp数组的初始化  确定遍历顺序  打印dp数组(Debug)   509. 斐波那契数   题目链接：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;fibonacci-number&#x2F;description&#x2F;  思路 确定dp数组">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-20T07:50:08.000Z">
-<meta property="article:modified_time" content="2024-03-21T07:26:15.691Z">
+<meta property="article:modified_time" content="2024-03-24T10:36:12.445Z">
 <meta property="article:author" content="Promise">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="算法">
@@ -84,7 +84,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 
 <body>
@@ -294,7 +294,7 @@
 <li><p>打印dp数组(Debug)</p>
 </li>
 </ol>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">2</span>) <br>            <span class="hljs-keyword">return</span> n;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(n + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt; n + <span class="hljs-number">1</span>; i++) &#123;<br>            dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">fib</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> n;<br>        &#125;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>];<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt; n + <span class="hljs-number">1</span>; i++) &#123;<br>            dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -320,7 +320,7 @@
 <li><p>打印dp数组(Debug)</p>
 </li>
 </ol>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> n;<br>        &#125;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(n + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i = <span class="hljs-number">3</span>; i &lt; n + <span class="hljs-number">1</span>; i++) &#123;<br>            dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp.<span class="hljs-built_in">back</span>();<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> n;<br>        &#125;<br>        <span class="hljs-type">int</span> []dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>];<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>; i &lt;= n; i++) &#123;<br>            dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -348,7 +348,7 @@
 <li><p>打印dp数组(Debug)</p>
 </li>
 </ol>
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">minCostClimbingStairs</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;cost)</span> </span>&#123;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(cost.size(), <span class="hljs-number">0</span>)</span></span>;<br>        dp[<span class="hljs-number">0</span>] = cost[<span class="hljs-number">0</span>];<br>        dp[<span class="hljs-number">1</span>] = cost[<span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">if</span> (cost.<span class="hljs-built_in">size</span>() == <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">min</span>(dp[<span class="hljs-number">0</span>], dp[<span class="hljs-number">1</span>]);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt; dp.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            <span class="hljs-keyword">if</span> (i == dp.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>) &#123;<br>                dp[i] = <span class="hljs-built_in">min</span>(dp[i - <span class="hljs-number">1</span>], cost[i] + dp[i - <span class="hljs-number">2</span>]);<br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                dp[i] = cost[i] + <span class="hljs-built_in">min</span>(dp[i - <span class="hljs-number">1</span>], dp[i - <span class="hljs-number">2</span>]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp.<span class="hljs-built_in">back</span>();<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minCostClimbingStairs</span><span class="hljs-params">(<span class="hljs-type">int</span>[] cost)</span> &#123;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[cost.length];<br>        dp[<span class="hljs-number">0</span>] = cost[<span class="hljs-number">0</span>];<br>        dp[<span class="hljs-number">1</span>] = cost[<span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">if</span> (cost.length == <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> Math.min(dp[<span class="hljs-number">0</span>], dp[<span class="hljs-number">1</span>]);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt; dp.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (i == dp.length - <span class="hljs-number">1</span>) &#123;<br>                dp[i] = Math.min(dp[i - <span class="hljs-number">1</span>], cost[i] + dp[i - <span class="hljs-number">2</span>]);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                dp[i] = cost[i] + Math.min(dp[i - <span class="hljs-number">1</span>], dp[i - <span class="hljs-number">2</span>]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[dp.length - <span class="hljs-number">1</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -429,9 +429,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/e9769661.html" title="【LeetCode】09动态规划Part02">
+                      <a href="/post/e9769661.html" title="【LeetCode】09动态规划Part02  62. 不同路径、63. 不同路径II">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【LeetCode】09动态规划Part02</span>
+                        <span class="hidden-mobile">【LeetCode】09动态规划Part02  62. 不同路径、63. 不同路径II</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -497,6 +497,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -690,6 +696,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
